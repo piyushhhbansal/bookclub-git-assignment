@@ -1,0 +1,108 @@
+Name    : Piyush Bansal
+Roll No : 2024EB02422
+Repo    : https://github.com/piyushhhbansal/bookclub-git-assignment
+
+Git commands used in the assignment (step wise)
+
+
+STEP 1 - LOCAL REPOSITORY
+
+  Command : git init
+  Use     : Starts version control in the bookclub-site folder. It
+            creates the .git folder where Git keeps all its data.
+
+  Command : git branch -M main
+  Use     : Renames the current branch to main. My Git created it as
+            master, and GitHub uses main.
+
+  Command : git config user.name "Piyush Bansal"
+            git config user.email "..."
+  Use     : Saves the name and email that get attached to my commits.
+
+  Command : git status
+  Use     : Tells the current state of the folder, i.e. which files are
+            new, changed or ready to commit. With -s the output is short.
+
+
+STEP 2 - COMMITS, BRANCH, MERGE
+
+  Command : git add .
+  Use     : Stages all new and changed files of the folder for the next
+            commit. (git add <file> stages only that one file.)
+
+  Command : git commit -m "message"
+  Use     : Creates a commit from the staged files. The message says what
+            the commit is about.
+
+  Command : git diff
+  Use     : Shows the lines changed in files since the last commit, before
+            they are staged.
+
+  Command : git commit -am "message"
+  Use     : Shortcut that stages every already-tracked file that changed
+            and commits it. Does not pick up brand new files.
+
+  Command : git branch feature
+  Use     : Makes a new branch called feature at the present commit.
+
+  Command : git branch -v
+  Use     : Lists branches along with the last commit of each one.
+
+  Command : git checkout feature
+            git checkout main
+  Use     : Changes the branch I am working on.
+
+  Command : git merge --no-ff feature -m "message"
+  Use     : Joins the work of feature into main. --no-ff makes Git create
+            a merge commit even when a fast-forward is possible.
+
+  Command : git log --oneline
+  Use     : Commit history, one commit in one line.
+
+  Command : git log --graph --all --pretty=format:'...'
+  Use     : History of all branches drawn as a graph, in the format I
+            specify (id, date, message, branch names).
+
+  Command : git branch --merged
+  Use     : Shows the branches whose commits are already inside the
+            current branch. Used to check the merge.
+
+
+STEP 3 - GITIGNORE
+
+  Command : git status -s --ignored
+  Use     : Short status that also lists the files Git is ignoring
+            (marked with !!). Used to test my .gitignore.
+
+  (The .gitignore file itself was made with echo, which is a shell
+  command and not a Git command.)
+
+
+STEP 4 - UNDO
+
+  Command : git revert --no-edit <commit id>
+  Use     : Undoes the given commit by adding a new commit with the
+            reverse change. Old history stays as it is. --no-edit uses
+            the default message without opening the editor.
+
+
+STEP 5 - GITHUB
+
+  Command : git remote add origin <url>
+  Use     : Stores the address of the GitHub repository under the name
+            origin.
+
+  Command : git push -u origin --all
+  Use     : Sends all local branches (main and feature) to GitHub and
+            links them with the branches there.
+
+  Command : git ls-remote --heads origin
+  Use     : Lists the branches present on the remote. Used to confirm
+            the push.
+
+  Command : git push
+  Use     : Sends new commits of the current branch to GitHub.
+
+  (The empty public repo was created with: gh repo create ... --public
+  This is the GitHub CLI and it does the same thing as the New
+  Repository button on the GitHub site.)
